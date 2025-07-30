@@ -63,7 +63,7 @@ nav a {
 /* header related styles */
 .header {
     background-color: #FFF8F3;
-    background-image: url('../background/header_bg.png'), url('../background/developer.png');
+    background-image: url('../assets/background/header_bg.png'), url('../assets/background/developer.png');
     background-repeat: no-repeat;
     background-position: bottom right, top left;
 }
@@ -222,39 +222,59 @@ textarea {
 }
 
 @media screen and (max-width:576px) {
-    .header{
+    .header {
         background-image: none;
     }
-    
-    nav,
-    nav > ul,
+
+    nav {
+        margin: 0;
+    }
+
+    nav li {
+        margin-right: 10px;
+    }
+
+    .about-info-container {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+    }
+
     .banner,
     .skills-container,
     .resume-container,
-    .about-info-container,
     footer {
         flex-direction: column;
     }
 
-    nav > ul {
+    nav>ul {
         gap: 10px;
     }
 
-    .banner .profile-pic{
+    .banner .profile-pic {
         width: 100%;
     }
 
     .banner,
     #what-i-do-description {
         padding: 20px;
+        flex-direction: column-reverse;
     }
 
-    footer, .about {
+    footer,
+    .about {
         padding: 10px;
     }
 
-    .btn-primary{
+    /* .btn-primary{
         margin-bottom: 15px;
+    } */
+
+    .btn-primary {
+        border-radius: 5px;
+
+        font-size: 16px;
+        font-weight: 500;
+        padding: 10px 30px;
     }
 
     .footer-column {
@@ -268,11 +288,43 @@ textarea {
     }
 }
 
-@media screen and (min-width:576px) and (max-width:960px) {
+@media screen and (min-width:577px) and (max-width:960px) {
+
+    .banner,
+    #what-i-do-description {
+        padding: 20px;
+        flex-direction: column-reverse;
+    }
+
+    nav {
+        margin: 0;
+    }
+
+    nav>ul {
+        align-items: center;
+        justify-items: center;
+    }
+
+    nav li {
+        margin-right: 10px;
+    }
+
+    .about-info-container {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+    }
+
+    .skills-container {
+        display: grid;
+        grid-template-columns: 2fr 2fr;
+        gap: 24px;
+    }
+
     footer {
         padding: 30px;
     }
-    .btn-primary{
+
+    .btn-primary {
         margin-bottom: 15px;
     }
 }
